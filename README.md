@@ -4,13 +4,13 @@ Terraform module to deploy Velocloud Edges in AWS
 ### Usage Example
 ```
 module "velo1" {
-  source        = "git::https://github.com/fkhademi/terraform-aws-instance-module.git"
+  source        = "git::https://github.com/fkhademi/terraform-aws-velo-edge-module.git"
 
-  name		        = "frey"
-  vpc_id	        = "vpc-05f81363c2a863c73"
-  private_subnet_id	= "subnet-0f04ced572601947d"
-  public_subnet_id	= "subnet-0f04ced572601947d"
-  ssh_key	        = var.ssh_key
+  name		          = "edge1"
+  vpc_id	          = "vpc-05f81363c2a863c73"
+  private_subnet_id	= "subnet-123456abcdef12345"
+  public_subnet_id	= "subnet-abcdef12345689123"
+  ssh_key	          = var.ssh_key
 }
 ```
 
@@ -29,7 +29,7 @@ The following variables are optional:
 
 key | default | value 
 :---|:---|:---
-instance_size | t2.micro | The size of the EC2 instance
+instance_size | c4.large | The size of the EC2 instance
 
 ### Outputs
 This module will return the following outputs:
